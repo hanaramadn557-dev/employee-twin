@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>التوأم الرقمي للموظفين</title>
+<style>
+body{font-family:Tahoma, Arial; margin:0; background:#f4f6f9; color:#222;}
+header{background:linear-gradient(135deg,#1e2a38,#2f80ed); color:#fff; padding:60px 20px; text-align:center;}
+section{max-width:1100px; margin:auto; padding:50px 20px;}
+h1,h2{margin-bottom:15px;}
+.card{background:#fff; padding:25px; border-radius:10px; margin-bottom:25px; box-shadow:0 4px 15px rgba(0,0,0,0.08);}
+ul{line-height:2;}
+.cta{text-align:center; margin-top:30px;}
+.cta a{background:#2f80ed; color:#fff; padding:15px 30px; text-decoration:none; border-radius:30px; font-size:18px;}
+</style>
+</head>
+<body>
+
+<header>
+<h1>التوأم الرقمي للموظفين</h1>
+<p>حل مبتكر لتحسين صحة الموظفين ورفع إنتاجية الشركات</p>
+</header>
+
+<section>
+
+<div class="card">
+<h2>📊 ما الذي نتابعه؟</h2>
+<ul>
+<li>مستوى الضغط والإجهاد</li>
+<li>الحالة النفسية</li>
+<li>النوم والجهد اليومي</li>
+<li>المهام المنجزة</li>
+<li>التقدم في المهارات</li>
+<li>مشكلات بيئة العمل</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>🚀 الفوائد</h2>
+<ul>
+<li>تقليل معدلات الغياب</li>
+<li>رفع الإنتاجية</li>
+<li>تحسين بيئة العمل</li>
+<li>دعم الموظفين بدون كشف بيانات شخصية</li>
+</ul>
+</div>
+
+<div class="cta">
+<a href="daily.html">ابدأ اليوم</a>
+</div>
+
+</section>
+</body>
+</html><!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أسئلة الموظف اليومية</title>
+<style>
+body{font-family:Tahoma, Arial; margin:0; background:#f4f6f9; color:#222;}
+header{background:linear-gradient(135deg,#1e2a38,#2f80ed); color:#fff; padding:60px 20px; text-align:center;}
+section{max-width:800px; margin:auto; padding:50px 20px;}
+label{display:block; margin-top:20px; font-weight:bold;}
+textarea{width:100%; min-height:80px; margin-top:10px; padding:10px; border-radius:6px; border:1px solid #ccc;}
+input[type="submit"]{margin-top:20px; padding:12px 25px; background:#2f80ed; color:#fff; border:none; border-radius:30px; font-size:16px; cursor:pointer;}
+a.back{display:inline-block; margin-top:30px; text-decoration:none; color:#2f80ed;}
+.result{margin-top:30px; background:#e1f0ff; padding:15px; border-radius:10px;}
+</style>
+</head>
+<body>
+
+<header>
+<h1>أسئلتك اليومية</h1>
+<p>شاركنا كيف كان يومك</p>
+</header>
+
+<section>
+<form id="dailyForm">
+<label>كيف كان يومك اليوم؟</label>
+<textarea id="dayExperience" placeholder="صف يومك..."></textarea>
+
+<label>هل صحتك النفسية أثرت على يومك؟</label>
+<textarea id="mentalEffect" placeholder="صف تأثير صحتك النفسية..."></textarea>
+
+<input type="submit" value="حفظ">
+</form>
+
+<a href="index.html" class="back">◀ العودة للصفحة الرئيسية</a>
+
+<div class="result" id="result" style="display:none;"></div>
+</section>
+
+<script>
+document.getElementById('dailyForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    let day = document.getElementById('dayExperience').value;
+    let mental = document.getElementById('mentalEffect').value;
+    let res = `<h3>شكراً لمشاركتك!</h3>
+               <p><strong>كيف كان يومك:</strong> ${day}</p>
+               <p><strong>تأثير صحتك النفسية:</strong> ${mental}</p>`;
+    document.getElementById('result').innerHTML = res;
+    document.getElementById('result').style.display = 'block';
+    document.getElementById('dailyForm').reset();
+});
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>نصائح يومية للموظف</title>
+<style>
+body{font-family:Tahoma, Arial; margin:0; background:#f4f6f9; color:#222;}
+header{background:linear-gradient(135deg,#1e2a38,#2f80ed); color:#fff; padding:60px 20px; text-align:center;}
+section{max-width:800px; margin:auto; padding:50px 20px; text-align:center;}
+button{padding:12px 25px; background:#2f80ed; color:#fff; border:none; border-radius:30px; font-size:16px; cursor:pointer; margin-top:20px;}
+.tip{margin-top:40px; background:#e1f0ff; padding:20px; border-radius:10px; font-size:18px; min-height:60px;}
+a.back{display:inline-block; margin-top:30px; text-decoration:none; color:#2f80ed;}
+</style>
+</head>
+<body>
+
+<header>
+<h1>نصائح يومية للموظف</h1>
+<p>نصيحة سريعة لتحسين يومك</p>
+</header>
+
+<section>
+<button onclick="newTip()">احصل على نصيحة جديدة</button>
+
+<div class="tip" id="tip">اضغط الزر للحصول على نصيحة!</div>
+
+<a href="index.html" class="back">◀ العودة للصفحة الرئيسية</a>
+</section>
+
+<script>
+const tips = [
+"خذ 5 دقائق للتمدد والتنفس العميق.",
+"ابدأ يومك بتحضير قائمة المهام الصغيرة.",
+"لا تنس شرب كوب ماء كل ساعة.",
+"خصص وقت قصير لتقييم يومك وأفكارك.",
+"ابتسم لزملائك فهذا يرفع المعنويات.",
+"جرّب كتابة 3 أشياء ممتنة لها كل يوم.",
+"خذ استراحة قصيرة كل ساعتين لتجديد النشاط."
+];
+
+function newTip(){
+    const randomIndex = Math.floor(Math.random() * tips.length);
+    document.getElementById('tip').innerText = tips[randomIndex];
+}
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>لوحة متابعة الموظف</title>
+<style>
+body{font-family:Tahoma, Arial; margin:0; background:#f4f6f9; color:#222;}
+header{background:linear-gradient(135deg,#1e2a38,#2f80ed); color:#fff; padding:60px 20px; text-align:center;}
+section{max-width:800px; margin:auto; padding:50px 20px;}
+.card{background:#fff; padding:25px; border-radius:10px; margin-bottom:25px; box-shadow:0 4px 15px rgba(0,0,0,0.08);}
+button{padding:12px 25px; background:#2f80ed; color:#fff; border:none; border-radius:30px; font-size:16px; cursor:pointer; margin-top:10px;}
+a.back{display:inline-block; margin-top:20px; text-decoration:none; color:#2f80ed;}
+</style>
+</head>
+<body>
+
+<header>
+<h1>لوحة متابعة يومك</h1>
+<p>ملخص يومك الحالي والنصيحة الموصى بها</p>
+</header>
+
+<section>
+<div class="card">
+<h2>ملخص يومك</h2>
+<p><strong>كيف كان يومك:</strong> <span id="daySummary">لم يتم إدخال أي بيانات بعد</span></p>
+<p><strong>تأثير صحتك النفسية:</strong> <span id="mentalSummary">لم يتم إدخال أي بيانات بعد</span></p>
+</div>
+
+<div class="card">
+<h2>نصيحة اليوم</h2>
+<p id="tipSummary">اضغط على الزر لتوليد نصيحة!</p>
+<button onclick="generateTip()">نصيحة جديدة</button>
+</div>
+
+<a href="index.html" class="back">◀ العودة للصفحة الرئيسية</a>
+<a href="daily.html" class="back">► العودة لأسئلتك اليومية</a>
+<a href="tips.html" class="back">► نصائح إضافية</a>
+
+</section>
+
+<script>
+// نصائح جاهزة
+const tips = [
+"خذ 5 دقائق للتمدد والتنفس العميق.",
+"ابدأ يومك بتحضير قائمة المهام الصغيرة.",
+"لا تنس شرب كوب ماء كل ساعة.",
+"خصص وقت قصير لتقييم يومك وأفكارك.",
+"ابتسم لزملائك فهذا يرفع المعنويات.",
+"جرّب كتابة 3 أشياء ممتنة لها كل يوم.",
+"خذ استراحة قصيرة كل ساعتين لتجديد النشاط."
+];
+
+// توليد نصيحة عشوائية
+function generateTip(){
+    const randomIndex = Math.floor(Math.random() * tips.length);
+    document.getElementById('tipSummary').innerText = tips[randomIndex];
+}
+
+// استرجاع بيانات الموظف من LocalStorage إذا كانت موجودة
+document.addEventListener('DOMContentLoaded', function(){
+    const day = localStorage.getItem('dayExperience');
+    const mental = localStorage.getItem('mentalEffect');
+    if(day) document.getElementById('daySummary').innerText = day;
+    if(mental) document.getElementById('mentalSummary').innerText = mental;
+});
+</script>
+
+</body>
+</html>
